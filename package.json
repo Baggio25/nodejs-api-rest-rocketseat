@@ -1,0 +1,11 @@
+{
+  "name": "nodejs-api-rest-rocketseat",
+  "version": "1.0.0",
+  "description": "Criando API Rest com NodeJS",
+  "main": "src/server.js",
+  "scripts": {
+    
+  },
+  "author": "Rodrigo Baggio",
+  "license": "ISC"
+}
