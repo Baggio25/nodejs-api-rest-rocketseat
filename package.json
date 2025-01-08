@@ -3,9 +3,11 @@
   "version": "1.0.0",
   "description": "Criando API Rest com NodeJS",
   "main": "src/server.js",
-  "scripts": {
-    
-  },
+  "scripts": {},
   "author": "Rodrigo Baggio",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.14.12",
+    "typescript": "^5.5.4"
+  }
 }
