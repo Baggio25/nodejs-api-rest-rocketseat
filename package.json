@@ -3,11 +3,14 @@
   "version": "1.0.0",
   "description": "Criando API Rest com NodeJS",
   "main": "src/server.js",
-  "scripts": {},
+  "scripts": {
+    "dev":"tsx watch src/server.ts"
+  },
   "author": "Rodrigo Baggio",
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^20.14.12",
+    "tsx": "^4.16.2",
     "typescript": "^5.5.4"
   }
 }
