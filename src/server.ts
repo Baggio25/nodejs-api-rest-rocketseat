@@ -6,9 +6,12 @@ const PORT = 3333;
 const app = express();
 app.use(express.json());
 
-app.use(myMiddleware);
+// Middleware global
+//app.use(myMiddleware);
 
-app.get("/products", (request, response) => {
+
+//Middleware local em uma rota específica
+app.get("/products", myMiddleware, (request, response) => {
 
   // /products?page=1&limit=10
 
