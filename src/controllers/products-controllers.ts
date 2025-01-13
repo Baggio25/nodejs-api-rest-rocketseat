@@ -28,8 +28,13 @@ export class ProductsControllers {
   create(request: Request, response: Response) {
     
     const bodySchema = z.object({ 
-      name: z.string({ required_error: "Nome é obrigatório "}),
-      price: z.number({ required_error: "Preço é obrigatório"})
+      name: z
+        .string({ required_error: "Nome é obrigatório "})
+        .trim()
+        .min(6, { message: "Nome deve conter 6 ou mais caracteres"}),
+      price: z
+        .number({ required_error: "Preço é obrigatório"})
+        .positive({ message: "O Preço deve ser positivo"})
     });
 
     const { name, price } = bodySchema.parse(request.body);
