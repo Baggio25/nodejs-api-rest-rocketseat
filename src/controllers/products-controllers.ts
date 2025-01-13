@@ -28,15 +28,12 @@ export class ProductsControllers {
   create(request: Request, response: Response) {
     
     const bodySchema = z.object({ 
-      name: z.string(),
-      price: z.number().nullish()
+      name: z.string({ required_error: "Nome é obrigatório "}),
+      price: z.number({ required_error: "Preço é obrigatório"})
     });
 
     const { name, price } = bodySchema.parse(request.body);
 
-
-   
-    
     response.status(201).json({ name, price, user_id: request.user_id });
   }
 
