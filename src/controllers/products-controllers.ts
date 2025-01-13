@@ -29,26 +29,13 @@ export class ProductsControllers {
     
     const bodySchema = z.object({ 
       name: z.string(),
-      price: z.number()
+      price: z.number().nullish()
     });
 
     const { name, price } = bodySchema.parse(request.body);
 
-    /* if(!name) {
-      throw new AppError("Nome do produto é obrigatório");
-    } 
 
-    if(name.trim().length < 4) {
-      throw new AppError("Nome do produto precisa ter pelo menos 4 caracteres");
-    }
-
-    if(!price) {
-      throw new AppError("Preço do produto é obrigatório");
-    } 
-
-    if(price < 0) {
-      throw new AppError("Preço do produto não pode ser menor que zero");
-    }*/
+   
     
     response.status(201).json({ name, price, user_id: request.user_id });
   }
